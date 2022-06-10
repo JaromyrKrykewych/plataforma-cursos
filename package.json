@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-css": "node-sass --include-path scss src/public/scss/styles.scss src/public/css/styles.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "start": "node NODE_ENV=production src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +25,7 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
+    "dotenv": "^16.0.1",
     "node-sass": "^7.0.1",
     "nodemon": "^2.0.16"
   }
